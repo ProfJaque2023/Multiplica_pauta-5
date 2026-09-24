@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mitos e Verdades sobre o Futebol Brasileiro</title>
+  <!-- Link para o arquivo de estilos CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Cabeçalho principal do site -->
+  <h1>Mitos e Verdades sobre o Futebol Brasileiro</h1>
+  <p class="intro">
+    Clique nas imagens de cada cartão para descobrir se a afirmação é
+    <strong>VERDADE</strong> ou <strong>MENTIRA</strong>. Cada cartão contém
+    uma afirmação e sua explicação detalhada.
+  </p>
+
+  <!-- ===== GRID DE CARTÕES ===== -->
+  <div class="cards-container">
+
+    <!-- ===== Cartão 1 ===== -->
+    <div class="card">
+      <h2>O Brasil é o maior campeão mundial de futebol</h2>
+
+      <p>
+        Uma afirmação clássica sobre a seleção brasileira. Clique na imagem
+        para descobrir a resposta.
+      </p>
+
+      <!-- Imagem clicável que revela o resultado -->
+      <div class="img-wrapper" data-result="true">
+        <img
+          src="https://picsum.photos/300/200?random=1"
+          alt="Troféu da Copa do Mundo com a bandeira do Brasil"
+        />
+        <!-- Selo revelado ao clicar -->
+        <span class="badge">VERDADE</span>
+        <!-- Texto oculto que aparece ao clicar -->
+        <div class="reveal">
+          O Brasil é o maior campeão mundial, com <strong>5 títulos</strong>
+          (1958, 1962, 1970, 1994 e 2002). Nenhuma outra seleção chegou a esse número.
+        </div>
+      </div>
+
+      <!-- Botão que abrirá o modal com detalhes (manipulado via JavaScript) -->
+      <button
+        class="btn-modal"
+        data-title="O Brasil é o maior campeão mundial de futebol?"
+        data-text="VERDADE! O Brasil conquistou 5 Copas do Mundo: 1958 (Suécia), 1962 (Chile), 1970 (México), 1994 (EUA) e 2002 (Coreia/Japão). É o maior campeão da história do torneio. A Alemanha e a Itália vêm em seguida, com 4 títulos cada."
+      >
+        Saiba mais
+      </button>
+
+      <!-- Botão de curtida com contador -->
+      <button class="btn-like" data-likes="0">
+        ❤️ Curtir (<span class="like-count">0</span>)
+      </button>
+    </div>
+
+    <!-- ===== Cartão 2 ===== -->
+    <div class="card">
+      <h2>Pelé foi o único jogador a vencer 3 Copas do Mundo</h2>
+
+      <p>
+        Uma afirmação sobre o Rei do Futebol. Clique na imagem para saber
+        se é verdade ou mentira.
+      </p>
+
+      <div class="img-wrapper" data-result="true">
+        <img
+          src="https://picsum.photos/300/200?random=2"
+          alt="Jogador de futebol comemorando com a taça"
+        />
+        <span class="badge">VERDADE</span>
+        <div class="reveal">
+          Pelé é o <strong>único jogador da história</strong> a conquistar
+          3 Copas do Mundo como atleta: 1958, 1962 e 1970.
+        </div>
+      </div>
+
+      <button
+        class="btn-modal"
+        data-title="Pelé foi o único jogador a vencer 3 Copas do Mundo?"
+        data-text="VERDADE! Pelé venceu as Copas de 1958 (Suécia), 1962 (Chile) e 1970 (México). Nenhum outro jogador na história conquistou três títulos mundiais como atleta. Outros jogadores brasileiros como Zagallo e laterais como Cafu chegaram a duas finais, mas não a três títulos como jogador."
+      >
+        Saiba mais
+      </button>
+
+      <button class="btn-like" data-likes="0">
+        ❤️ Curtir (<span class="like-count">0</span>)
+      </button>
+    </div>
+
+    <!-- ===== Cartão 3 ===== -->
+    <div class="card">
+      <h2>A seleção brasileira nunca perdeu uma Copa em casa</h2>
+
+      <p>
+        Um mito muito difundido entre torcedores. Clique na imagem para
+        descobrir a resposta.
+      </p>
+
+      <div class="img-wrapper" data-result="false">
+        <img
+          src="https://picsum.photos/300/200?random=3"
+          alt="Estádio do Maracanã lotado com torcida brasileira"
+        />
+        <span class="badge">MENTIRA</span>
+        <div class="reveal">
+          Em <strong>1950</strong>, o Brasil perdeu a final para o Uruguai
+          no Maracanã (o "Maracanazo"). Em <strong>2014</strong>, levou
+          <strong>7 a 1</strong> da Alemanha na semifinal.
+        </div>
+      </div>
+
+      <button
+        class="btn-modal"
+        data-title="A seleção brasileira nunca perdeu uma Copa em casa?"
+        data-text="MENTIRA! O Brasil já perdeu duas Copas jogando em casa. Em 1950, perdeu a final para o Uruguai por 2 a 1 no Maracanã, no episódio conhecido como 'Maracanazo'. Em 2014, na semifinal contra a Alemanha, sofreu uma histórica goleada por 7 a 1 no Mineirão."
+      >
+        Saiba mais
+      </button>
+
+      <button class="btn-like" data-likes="0">
+        ❤️ Curtir (<span class="like-count">0</span>)
+      </button>
+    </div>
+
+    <!-- ===== Cartão 4 ===== -->
+    <div class="card">
+      <h2>Marta é a maior artilheira da história das Copas do Mundo</h2>
+
+      <p>
+        Uma afirmação sobre a Rainha do Futebol. Clique na imagem para
+        revelar a resposta.
+      </p>
+
+      <div class="img-wrapper" data-result="true">
+        <img
+          src="https://picsum.photos/300/200?random=4"
+          alt="Jogadora de futebol feminino comemorando gol"
+        />
+        <span class="badge">VERDADE</span>
+        <div class="reveal">
+          Marta é a <strong>maior artilheira da história das Copas do Mundo</strong>
+          (masculino e feminino), com <strong>17 gols</strong> em 6 edições.
+        </div>
+      </div>
+
+      <button
+        class="btn-modal"
+        data-title="Marta é a maior artilheira da história das Copas do Mundo?"
+        data-text="VERDADE! Marta Vieira da Silva é a maior artilheira da história das Copas do Mundo, somando torneios masculinos e femininos, com 17 gols marcados em 6 edições do Mundial. Ela superou Miroslav Klose (16 gols) e Ronaldo Fenômeno (15 gols). Marta também foi eleita 6 vezes a melhor jogadora do mundo pela FIFA."
+      >
+        Saiba mais
+      </button>
+
+      <button class="btn-like" data-likes="0">
+        ❤️ Curtir (<span class="like-count">0</span>)
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ===== Estrutura oculta do Modal (janela flutuante) ===== -->
+  <!-- A classe .hidden será usada para esconder/mostrar o modal via JavaScript -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <!-- Botão de fechar o modal (manipulado via JavaScript) -->
+      <span class="close-btn">&times;</span>
+
+      <!-- Título dinâmico do modal (preenchido via JavaScript) -->
+      <h3 id="modal-title"></h3>
+
+      <!-- Texto detalhado dinâmico do modal (preenchido via JavaScript) -->
+      <p id="modal-text"></p>
+    </div>
+  </div>
+
+  <!-- Link para o arquivo JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

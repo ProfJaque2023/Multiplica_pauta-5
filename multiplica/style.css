@@ -1,0 +1,303 @@
+/* ===== Reset básico ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Corpo da página ===== */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #009c3b 0%, #ffdf00 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #1a1a1a;
+}
+
+/* ===== Cabeçalho principal ===== */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #002776;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* ===== Parágrafo de introdução ===== */
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #222;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.intro strong {
+  color: #002776;
+}
+
+/* ===== Grid de cartões (4 cards) ===== */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Cartão de conteúdo ===== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== Subtítulo (h2) do cartão ===== */
+.card h2 {
+  font-size: 1.15rem;
+  color: #002776;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #ffdf00;
+  padding-bottom: 8px;
+  min-height: 60px;
+}
+
+/* ===== Parágrafo do cartão ===== */
+.card > p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+/* ===== Wrapper da imagem clicável ===== */
+.img-wrapper {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.img-wrapper:hover {
+  transform: scale(1.02);
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.4s ease;
+}
+
+/* ===== Selo VERDADE / MENTIRA ===== */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+/* ===== Texto revelado sobre a imagem ===== */
+.reveal {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.reveal strong {
+  color: #ffdf00;
+}
+
+/* ===== Estado revelado (aplicado via JavaScript) ===== */
+.img-wrapper.revealed img {
+  filter: brightness(0.45);
+}
+
+.img-wrapper.revealed .badge {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.img-wrapper.revealed .reveal {
+  transform: translateY(0);
+}
+
+/* ===== Cores dinâmicas do selo (verdade ou mentira) ===== */
+.img-wrapper[data-result="true"] .badge {
+  background: #009c3b;
+  box-shadow: 0 4px 10px rgba(0, 156, 59, 0.5);
+}
+
+.img-wrapper[data-result="false"] .badge {
+  background: #d10024;
+  box-shadow: 0 4px 10px rgba(209, 0, 36, 0.5);
+}
+
+/* ===== Botão "Saiba mais" ===== */
+.btn-modal {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: auto;
+  margin-bottom: 10px;
+  background: #002776;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-modal:hover {
+  background: #001b52;
+  transform: scale(1.02);
+}
+
+/* ===== Botão de curtida ===== */
+.btn-like {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #fff;
+  color: #d10024;
+  border: 2px solid #d10024;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-like:hover {
+  background: #d10024;
+  color: #fff;
+  transform: scale(1.02);
+}
+
+.btn-like.liked {
+  background: #d10024;
+  color: #fff;
+}
+
+/* ===== Modal (janela flutuante) ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Classe usada para esconder o modal via JavaScript */
+.modal.hidden {
+  display: none;
+  opacity: 0;
+}
+
+/* ===== Conteúdo interno do modal ===== */
+.modal-content {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 14px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Botão de fechar do modal ===== */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #d10024;
+}
+
+/* ===== Título do modal ===== */
+#modal-title {
+  font-size: 1.35rem;
+  color: #002776;
+  margin-bottom: 15px;
+  padding-right: 25px;
+}
+
+/* ===== Texto do modal ===== */
+#modal-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .intro {
+    font-size: 1rem;
+  }
+
+  .card h2 {
+    min-height: auto;
+  }
+}
